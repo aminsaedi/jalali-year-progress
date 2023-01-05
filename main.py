@@ -36,4 +36,5 @@ def get_progress_bar(percent):
 progress = get_today_progress()
 if (progress != -1):
     progress_bar = get_progress_bar(progress)
-    api.update_status(progress_bar)
+    # api.update_status(progress_bar)
+    print(progress_bar)
