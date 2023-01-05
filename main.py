@@ -17,8 +17,8 @@ full = "▓"
 total = 15
 
 
-def get_today_progress(offset):
-    today = jdatetime.date.today() - jdatetime.timedelta(days=offset)
+def get_today_progress():
+    today = jdatetime.date.today()
     yesterday = today - jdatetime.timedelta(days=1)
     today_progress = math.floor(int(today.strftime("%j")) / 365 * 100)
     yesterday_progress = math.floor(int(yesterday.strftime("%j")) / 365 * 100)
@@ -33,8 +33,7 @@ def get_progress_bar(percent):
     return full * full_count + empty * empty_count + " " + str(percent) + "%"
 
 
-for i in range(30):
-    progress = get_today_progress(i)
-    if (progress != -1):
-        progress_bar = get_progress_bar(progress)
-        api.update_status(progress_bar)
+progress = get_today_progress()
+if (progress != -1):
+    progress_bar = get_progress_bar(progress)
+    api.update_status(progress_bar)
