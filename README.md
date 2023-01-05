@@ -9,5 +9,5 @@ access_token
 access_token_secret
 ```
 
-## Cronjob to run every three days
-01 0 */3 * *  /home/ubuntu/jalali-year-progress/run.sh
+## Cronjob to run every night
+01 0 */1 * *  /home/ubuntu/jalali-year-progress/run.sh
